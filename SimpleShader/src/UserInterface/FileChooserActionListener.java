@@ -11,13 +11,12 @@ public class FileChooserActionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		
+
 		final JFileChooser fc = new JFileChooser();
 		fc.showOpenDialog(fc);
 		SwingApp.inputImage = fc.getSelectedFile();
 		try {
-			SwingApp.visualiseImage(SwingApp.frame);
+			SwingApp.visualiseImage(SwingApp.frame, SwingApp.imagePanel);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

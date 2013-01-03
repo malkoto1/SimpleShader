@@ -12,16 +12,22 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import java.awt.CardLayout;
 
 public class SwingApp {
 	public static File inputImage;
 	public static JFrame frame;
 
+	public static ImagePanel imagePanel;
+
 	public static void main(String[] args) throws IOException {
 		final Image image = ImageIO.read(new File("resources/background.png"));
 		frame = new JFrame();
-		frame.add(new ImagePanel(image));
-		frame.setSize(700, 700);
+		frame.setResizable(false);
+		imagePanel = new ImagePanel(image);
+		frame.getContentPane().add(imagePanel);
+		imagePanel.setLayout(new CardLayout(0, 0));
+		frame.setSize(750, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JMenuBar menuBar = new JMenuBar();
@@ -37,26 +43,26 @@ public class SwingApp {
 		newImageMenuItem.addActionListener(new FileChooserActionListener());
 		fileMenu.add(newImageMenuItem);
 
-		
-
 		frame.setVisible(true);
-		
+
 	}
-	
-	public static void visualiseImage(JFrame frame) throws IOException{
+
+	public static void visualiseImage(JFrame frame, ImagePanel imagePanel)
+			throws IOException {
 
 		if (inputImage != null) {
 			Image loadedImage = ImageIO.read(inputImage);
 			ImagePanel panel = new ImagePanel(loadedImage);
 			panel.setSize(frame.getHeight() - 100, frame.getWidth() - 100);
-			frame.add(panel);
+			panel.setBounds(34, 63, 680, 480);
+			imagePanel.add(panel);
+			imagePanel.repaint();
 			frame.repaint();
-		}
-		else {
-			
+		} else {
+
 		}
 	}
-	
+
 }
 
 @SuppressWarnings("serial")

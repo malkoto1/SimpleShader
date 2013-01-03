@@ -32,6 +32,7 @@ public class SwingApp {
 
         // File->New, N - Mnemonic
         JMenuItem newImageMenuItem = new JMenuItem("New Image", KeyEvent.VK_N);
+        newImageMenuItem.addActionListener(new MyActionListener());
         fileMenu.add(newImageMenuItem);
         
         frame.setVisible(true);

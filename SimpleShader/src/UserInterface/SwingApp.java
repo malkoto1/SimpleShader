@@ -15,10 +15,11 @@ import javax.swing.JPanel;
 
 public class SwingApp {
 	public static File inputImage;
+	public static JFrame frame;
 
 	public static void main(String[] args) throws IOException {
 		final Image image = ImageIO.read(new File("resources/background.png"));
-		final JFrame frame = new JFrame();
+		frame = new JFrame();
 		frame.add(new ImagePanel(image));
 		frame.setSize(700, 700);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,6 +37,14 @@ public class SwingApp {
 		newImageMenuItem.addActionListener(new FileChooserActionListener());
 		fileMenu.add(newImageMenuItem);
 
+		
+
+		frame.setVisible(true);
+		
+	}
+	
+	public static void visualiseImage(JFrame frame) throws IOException{
+
 		if (inputImage != null) {
 			Image loadedImage = ImageIO.read(inputImage);
 			ImagePanel panel = new ImagePanel(loadedImage);
@@ -46,9 +55,8 @@ public class SwingApp {
 		else {
 			
 		}
-
-		frame.setVisible(true);
 	}
+	
 }
 
 @SuppressWarnings("serial")

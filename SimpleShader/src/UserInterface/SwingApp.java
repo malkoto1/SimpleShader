@@ -75,7 +75,7 @@ public class SwingApp {
 		newImageMenuItem.addActionListener(fileChooserActionListener);
 		fileMenu.add(newImageMenuItem);
 		
-		addButton(new String(), imagePanel, true, false, false);
+		addButton("resources/redButtonImg", imagePanel, true, false, false);
 
 		frame.setVisible(true);
 	}

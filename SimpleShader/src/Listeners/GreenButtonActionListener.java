@@ -13,14 +13,14 @@ import UserInterface.UIBuilder;
 
 import Functionality.ImagePanel;
 
-public class GreenActionListener implements ActionListener
+public class GreenButtonActionListener implements ActionListener
 {
 
 	private JFrame frame;
 
 	private ImagePanel imagePanel;
 
-	public GreenActionListener(JFrame frame, ImagePanel imagePanel)
+	public GreenButtonActionListener(JFrame frame, ImagePanel imagePanel)
 	{
 		this.frame = frame;
 		this.imagePanel = imagePanel;

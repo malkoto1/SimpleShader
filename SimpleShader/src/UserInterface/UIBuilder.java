@@ -22,7 +22,7 @@ import Functionality.ImagePanel;
 import Listeners.BlueButtonActionListener;
 import Listeners.ExitButtonActionListener;
 import Listeners.FileChooserActionListener;
-import Listeners.GreenActionListener;
+import Listeners.GreenButtonActionListener;
 import Listeners.RedButtonActionListener;
 import Listeners.SaveFileActionListener;
 import Listeners.WindowResizeListener;
@@ -166,7 +166,7 @@ public class UIBuilder
 		else if (isGreen)
 		{
 			btnNewButton.setBounds(210 + insets.left, 50 + insets.top, 105, 103);
-			btnNewButton.addActionListener(new GreenActionListener(frame, imagePanel));
+			btnNewButton.addActionListener(new GreenButtonActionListener(frame, imagePanel));
 			buttonsPanel.add(btnNewButton);
 		}
 		else if (isBlue)
